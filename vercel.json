@@ -1,19 +1,7 @@
 {
-  "version": 2,
-  "installCommand": "pnpm install --frozen-lockfile",
-  "buildCommand": "pnpm --filter frontend... build",
-  "builds": [
-    {
-      "src": "frontend/next.config.js",
-      "use": "@vercel/next"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/frontend/$1"
-    }
-  ],
+  "buildCommand": "cd frontend && pnpm run build",
+  "outputDirectory": "frontend/.next",
+  "installCommand": "cd frontend && pnpm install",
   "redirects": [
     {
       "source": "/gallery",
